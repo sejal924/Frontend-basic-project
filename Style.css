@@ -1,42 +1,74 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: row;
   margin: 0;
 }
+
 .col-1 {
   background: #d7e8d4;
-  flex: 1;
+  flex: 0.5;
+  display: flex;
+  position: fixed;
+  left: 0; /* Stick to the left */
+  top: 0; /* Stick to the top */
+  height: 100vh; /* Full height */
+  width: 12vw; /*Adjust width as needed */
+  padding: 1em;
+  overflow: hidden;
 }
+
 .col-2 {
   display: flex;
   flex-direction: column;
-  flex: 5;
+  margin-left: 12vw; /* Shift right to avoid overlap */
+  width: calc(100% - 12vw); /* Take the remaining width */
 }
+
 .content {
   display: flex;
   flex-direction: row;
 }
+
 .content > article {
-  flex: 3;
+  flex: 4;
   min-height: 60vh;
 }
+
 .content > aside {
   background: beige;
-  flex: 1;
+  flex: 0.5;
 }
+
 header,
 footer {
   background: yellowgreen;
   height: 20vh;
 }
+
 header,
 footer,
 article,
 nav,
 aside {
   padding: 1em;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+  max-height: 100%;
+}
+
+.cards img {
+  margin: 10px;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+  max-width: 23vw;
 }
